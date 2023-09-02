@@ -4,7 +4,7 @@ import pandas
 #create background gif
 screen=turtle.Screen()
 screen.title("U.S. States Game")
-image="./day_25/US_Game/blank_states_img.gif"
+image="./blank_states_img.gif"
 screen.addshape(image)
 
 turtle.shape(image)
@@ -18,7 +18,7 @@ turtle.mainloop()
 '''
 
 #convert csv to list
-data=pandas.read_csv("./day_25/US_Game/50_states.csv")
+data=pandas.read_csv("./50_states.csv")
 all_states=data.state.to_list()
 guessed_states=[]
 
@@ -32,7 +32,7 @@ while(len(guessed_states) < 50):
             if state not in guessed_states:
                 unguessed_states.append(state)
         new_data=pandas.DataFrame(unguessed_states)
-        new_data.to_csv("./day_25/US_Game/states_to_learn.csv")
+        new_data.to_csv("./states_to_learn.csv")
         break
     #If answer_state is one of the states in all the states of the 50_states.csv
     if answer_state in all_states and answer_state not in guessed_states:
