@@ -28,7 +28,7 @@ def save_info():
     else:
         is_ok=messagebox.askokcancel(title=website,message=f"These are the details entered: \nEmail/Username: {email_username}\nPassword: {password}\nIs it ok to save ?")
         if is_ok:
-            details= open("./day_29/PasswordManager/details.txt","a")
+            details= open("./PasswordManager_15/details.txt","a")
             details.write(f"{website} | {email_username} | {password}\n")
             entry1.delete(0,END)
             entry3.delete(0,END)
@@ -41,7 +41,7 @@ window.config(padx=20,pady=20)
 
 #img
 canvas=Canvas(width=200,height=200,)
-lock_img=PhotoImage(file="./day_29/PasswordManager/logo.png")
+lock_img=PhotoImage(file="./PasswordManager_15/logo.png")
 canvas.create_image(100,100,image=lock_img)
 canvas.grid(column=1,row=0)
 
